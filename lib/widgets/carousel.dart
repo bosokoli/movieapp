@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:movieapp/data/model/movie_model.dart';
+import 'package:movieapp/movie_details.dart';
+import 'package:movieapp/provider/movie_provider.dart';
 import 'package:movieapp/widgets/movie_card.dart';
 
 class MovieCarousel extends ConsumerStatefulWidget {
@@ -110,8 +112,18 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
 
         return Transform.rotate(
           angle: pi * value,
-          child: MovieCard(
-            image: movieList[index].image,
+          child: InkWell(
+            onTap: () {
+              ref.watch(movieProvider).movieId = index;
+
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MovieDetails()));
+            },
+            child: MovieCard(
+              image: movieList[index].image,
+            ),
           ),
         );
       },
