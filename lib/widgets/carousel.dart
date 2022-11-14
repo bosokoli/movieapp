@@ -28,13 +28,17 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
   @override
   void initState() {
     super.initState();
+    //controller for page view
     _controller =
         PageController(viewportFraction: 0.7, initialPage: _currentPage);
+
+    // move cards every 5 seconds
     animator = Timer.periodic(const Duration(seconds: 5), (Timer t) async {
       _controller.animateToPage(nextIndex,
           duration: const Duration(seconds: 1), curve: Curves.ease);
       nextIndex++;
-      previousIndex = nextIndex - 2;
+
+      //reset view to first card after last view
       if (nextIndex == movieList.length) {
         nextIndex = 0;
         return;
@@ -47,6 +51,7 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
     return Column(
       children: [
         Expanded(
+          //Page view for carousel
           child: PageView.builder(
             onPageChanged: ((value) {
               setState(() {
@@ -73,8 +78,10 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
             itemCount: movieList.length,
             itemBuilder: ((context, index) {
               if (activePage.value == index) {
+                // container for active card indicator
                 return Transform.scale(
                   scale: 1.5,
+                  //container for active card indicator
                   child: Container(
                     width: 30,
                     decoration: BoxDecoration(
@@ -83,6 +90,7 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
                   ),
                 );
               }
+              //scale circular avatar
               return Transform.scale(
                 scale: 1.5,
                 child: const CircleAvatar(
@@ -106,16 +114,20 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
       builder: (context, child) {
         double value = 0.0;
         if (_controller.position.haveDimensions) {
+          //get value for the rotation angle to rotate inactive cards
           value = index.toDouble() - (_controller.page ?? 0);
           value = (value * 0.048).clamp(-1, 1);
         }
 
         return Transform.rotate(
+          //multiply value witn pi to get rotaton angle
           angle: pi * value,
           child: InkWell(
             onTap: () {
+              //update movieid with index value
               ref.watch(movieProvider).movieId = index;
 
+              //push to movie details screen
               Navigator.push(
                   context,
                   MaterialPageRoute(

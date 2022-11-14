@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "Welcome Alen 👋",
+                          "Welcome Bosokoli 👋",
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w300),
                         ),

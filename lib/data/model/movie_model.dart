@@ -23,7 +23,14 @@ final List<Movies> movieList = [
     category: "comedy",
     image: "lib/assets/images/me_time.png",
     rating: "5.0",
-    description: "",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio"
+        "eyLorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio ey",
     duration: "1h 41m",
   ),
   Movies(
@@ -31,7 +38,14 @@ final List<Movies> movieList = [
     name: "Wakanda Forever",
     category: "Thriller",
     rating: "5.0",
-    description: "",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio"
+        "eyLorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio ey",
     duration: "1h 41m",
     image: "lib/assets/images/wakanda.png",
   ),
@@ -40,7 +54,14 @@ final List<Movies> movieList = [
       name: "Avatar",
       category: "Thriller",
       rating: "5.0",
-      description: "",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisc"
+          "elit, sed do eiusmod tempor incididunt ut labore et"
+          "dolore magna aliqua. Ut enim ad minim veniam, quis"
+          "nostrud exercitation ullamco laboris nisi ut aliquio"
+          "eyLorem ipsum dolor sit amet, consectetur adipisc"
+          "elit, sed do eiusmod tempor incididunt ut labore et"
+          "dolore magna aliqua. Ut enim ad minim veniam, quis"
+          "nostrud exercitation ullamco laboris nisi ut aliquio ey",
       duration: "1h 41m",
       image: "lib/assets/images/avatar.png"),
   Movies(
@@ -48,7 +69,14 @@ final List<Movies> movieList = [
     name: "Manifest",
     category: "sci-fi",
     rating: "5.0",
-    description: "",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio"
+        "eyLorem ipsum dolor sit amet, consectetur adipisc"
+        "elit, sed do eiusmod tempor incididunt ut labore et"
+        "dolore magna aliqua. Ut enim ad minim veniam, quis"
+        "nostrud exercitation ullamco laboris nisi ut aliquio ey",
     duration: "1h 41m",
     image: "lib/assets/images/manifest.png",
   ),
