@@ -169,6 +169,40 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: const Color.fromARGB(255, 17, 5, 29),
+          elevation: 0,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.orange,
+          unselectedItemColor: Colors.white,
+          items: const [
+            BottomNavigationBarItem(
+              label: "home",
+              icon: Icon(
+                Icons.home_rounded,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: "explore",
+              icon: Icon(
+                Icons.explore,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: "Movies",
+              icon: Icon(
+                Icons.movie,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: "Profile",
+              icon: Icon(
+                Icons.person,
+              ),
+            )
+          ]),
     );
   }
 }
