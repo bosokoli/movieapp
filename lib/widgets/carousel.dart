@@ -42,63 +42,59 @@ class _MovieCarouselState extends ConsumerState<MovieCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 320,
-            child: PageView.builder(
-              onPageChanged: ((value) {
-                setState(() {
-                  activePage.value = value;
-                });
-              }),
-              controller: _controller,
-              itemCount: movieList.length,
-              physics: const ClampingScrollPhysics(),
-              itemBuilder: (context, index) {
-                return carouselView(index);
-              },
-            ),
+    return Column(
+      children: [
+        Expanded(
+          child: PageView.builder(
+            onPageChanged: ((value) {
+              setState(() {
+                activePage.value = value;
+              });
+            }),
+            controller: _controller,
+            itemCount: movieList.length,
+            physics: const ClampingScrollPhysics(),
+            itemBuilder: (context, index) {
+              return carouselView(index);
+            },
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            height: 10,
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: movieList.length,
-              itemBuilder: ((context, index) {
-                if (activePage.value == index) {
-                  return Transform.scale(
-                    scale: 1.5,
-                    child: Container(
-                      width: 30,
-                      height: 2,
-                      decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(4)),
-                    ),
-                  );
-                }
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        SizedBox(
+          height: 10,
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: movieList.length,
+            itemBuilder: ((context, index) {
+              if (activePage.value == index) {
                 return Transform.scale(
                   scale: 1.5,
-                  child: const CircleAvatar(
-                    radius: 10,
-                    backgroundColor: Colors.grey,
+                  child: Container(
+                    width: 30,
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(4)),
                   ),
                 );
-              }),
-              separatorBuilder: (context, index) => const SizedBox(
-                width: 20,
-              ),
+              }
+              return Transform.scale(
+                scale: 1.5,
+                child: const CircleAvatar(
+                  radius: 10,
+                  backgroundColor: Colors.grey,
+                ),
+              );
+            }),
+            separatorBuilder: (context, index) => const SizedBox(
+              width: 20,
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 

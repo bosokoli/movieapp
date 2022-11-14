@@ -10,20 +10,16 @@ class MovieCard extends StatelessWidget {
       builder: (context, ref, child) {
         return Padding(
           padding: const EdgeInsets.only(right: 20, left: 20),
-          child: OverflowBox(
-            minHeight: 320,
-            minWidth: 230,
-            child: Container(
-              clipBehavior: Clip.hardEdge,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
-                  )),
-              child: Image.asset(
-                image,
-                fit: BoxFit.fill,
-              ),
+          child: Container(
+            clipBehavior: Clip.hardEdge,
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                )),
+            child: Image.asset(
+              image,
+              fit: BoxFit.fill,
             ),
           ),
         );
